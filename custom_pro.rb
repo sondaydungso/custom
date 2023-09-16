@@ -39,8 +39,8 @@ class Ultra < Gosu::Window
 	end
 	def draw()
 		draw_quad(0, 0, 0xffffffff, 0, 600, 0xffffffff, 800, 600, 0xffffffff, 800, 0, 0xffffffff, 0)
-		draw_quad(600,100, Gosu::Color::BLACK, 600, 300, Gosu::Color::BLACK, 100, 300, Gosu::Color::BLACK, 100, 300, Gosu::Color::BLACK, 0)
-      
+		draw_quad(200,200, Gosu::Color::BLUE, 600, 200, Gosu::Color::BLUE, 600, 400, Gosu::Color::BLUE, 200, 400, Gosu::Color::BLUE, 0)
+    @dot.draw(300,300)
 		
 			
 	end
