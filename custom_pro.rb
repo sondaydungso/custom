@@ -44,12 +44,12 @@ class Ultra < Gosu::Window
 		@velocity_y *= -1 if @y - @height /2 > 390 || @y - @height < 210
 		@x_back += @velocity_backx
 		@y_back += @velocity_backy
-		@velocity_backx *= -1 if @x_back - @width / 2 > 590 || @x_back - @width < 210
-		@velocity_backy *= -1 if @y_back - @height /2 > 390 || @y_back - @height < 210
+		@velocity_backx *= -1 if @x_back - @width / 2 > 550 || @x_back - @width < 200
+		@velocity_backy *= -1 if @y_back - @height /2 > 350 || @y_back - @height < 200
 		@visible -= 1
 		@visible_back -= 1
 		@visible = 30 if @visible < -10 and rand 0.5
-		@visible_back = 10 if @visible < -10 and rand 0.7
+		@visible_back = 10 if @visible_back < -10 and rand 0.7
 
 	end
 	def draw()
@@ -57,8 +57,12 @@ class Ultra < Gosu::Window
 		draw_quad(200,200, Gosu::Color::GREEN, 600, 200, Gosu::Color::GREEN, 600, 400, Gosu::Color::GREEN, 200, 400, Gosu::Color::GREEN, ZOrder::BACKGROUND)
     #ack = draw_quad(200,200, Gosu::Color::GREEN, 600, 200, Gosu::Color::GREEN, 600, 400, Gosu::Color::GREEN, 200, 400, Gosu::Color::GREEN, ZOrder::MIDDLE)
     if @visible > 0
- 			@dot.draw(@x,@y, ZOrder::TOP)
- 			@back.draw(@x,@y, ZOrder::MIDDLE)
+ 			@dot.draw(@x,@y)
+ 			#@back.draw(@x,@y, ZOrder::MIDDLE)
+ 		end
+ 		if @visible_back > 0
+ 			@back.draw(@x_back ,@y_back)
+ 			
  		end
  		
 
