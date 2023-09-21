@@ -24,15 +24,12 @@ class Ultra < Gosu::Window
 		@velocity_backy = 5
 		@visible = 0
 		@visible_back = 0
-
-		#@hammer_image = Gosu::Image.new('hammer.png')
 		@hit = 0 
 		@score = 0
 		@font = Gosu::Font.new(30)
 		@time_left = Gosu.milliseconds / 1000
 		@play = true
-		#@space = 0
-		@time = 0
+		@font = Gosu::Font.new(30)
 
 		
 
@@ -62,9 +59,9 @@ class Ultra < Gosu::Window
  		end
  		if @visible_back > 0
  			@back.draw(@x_back ,@y_back)
- 			
  		end
- 		
+ 		@font.draw_text(@score.to_s, 700, 100, 0)
+		@font.draw_text(@time_left.to_s, 700, 20, 0)
 
 
 		
