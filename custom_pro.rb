@@ -12,15 +12,16 @@ class Ultra < Gosu::Window
 		@radius = 20
 		@dot = Gosu::Image.new('dot.png')
 		@back = Gosu::Image.new('yellow.jpg')
+		@button = Gosu::Image.new('')
 		@x = 300
 		@x_back = 300
 		@y = 300
 		@y_back = 300
 		@width = 1
 		@height = 1
-		@velocity_x = 2
+		@velocity_x = 3
 		@velocity_backx = 5
-		@velocity_y = 2
+		@velocity_y = 3
 		@velocity_backy = 5
 		@visible = 0
 		@visible_back = 0
@@ -52,10 +53,10 @@ class Ultra < Gosu::Window
 	def draw()
 		draw_quad(0, 0, 0xffffffff, 0, 600, 0xffffffff, 800, 600, 0xffffffff, 800, 0, 0xffffffff, 0)
 		draw_quad(200,200, Gosu::Color::GREEN, 600, 200, Gosu::Color::GREEN, 600, 400, Gosu::Color::GREEN, 200, 400, Gosu::Color::GREEN, ZOrder::BACKGROUND)
-    #ack = draw_quad(200,200, Gosu::Color::GREEN, 600, 200, Gosu::Color::GREEN, 600, 400, Gosu::Color::GREEN, 200, 400, Gosu::Color::GREEN, ZOrder::MIDDLE)
+    
     if @visible > 0
  			@dot.draw(@x,@y)
- 			#@back.draw(@x,@y, ZOrder::MIDDLE)
+ 			
  		end
  		if @visible_back > 0
  			@back.draw(@x_back ,@y_back)
